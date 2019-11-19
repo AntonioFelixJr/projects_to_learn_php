@@ -1,0 +1,11 @@
+{
+    "name": "PHP-MVC",
+    "description": "Project using OOP and MVC",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "FX\\": "src",
+            "App\\": "app"
+        }
+    }
+}
