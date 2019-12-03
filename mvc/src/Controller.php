@@ -4,6 +4,14 @@ namespace FX;
 
 class Controller
 {
+    protected $model;
+
+    public function __construct(Model $model)
+    {
+        $this->model = $model;
+        $this->configmodel();
+    }
+
     protected function render(array $data = [], string $view = null)
     {
 
@@ -22,5 +30,12 @@ class Controller
         $class = array_pop($class);
         $class = preg_replace('/Controller$/', '', $class);
         return strtolower($class);
+    }
+
+    private function configmodel()
+    {
+        if (!$this->model->getTableName()) {
+                $this->model->setTableName($this->controllerName());
+        }
     }
 }

@@ -12,4 +12,9 @@ $router['/cadastrar'] = [
     'action' => 'create'
 ];
 
+$router['/produtos'] = [
+    'class' => App\Controllers\ProductsController::class,
+    'action' => 'index'
+];
+
 return $router;
